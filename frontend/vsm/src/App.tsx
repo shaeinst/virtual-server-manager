@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 
+import "./styles.scss"
 import { RootState } from "$exporter/redux"
 import { Authentication, Home } from "$exporter/screen"
 
@@ -9,7 +10,7 @@ function App() {
     )
 
     return (
-        <div>
+        <div className="MODE__LIGHT">
             {isSignedIn ? (
                 // if user is signed in
                 <Home />

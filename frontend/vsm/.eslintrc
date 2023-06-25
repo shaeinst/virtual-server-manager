@@ -1,3 +1,7 @@
 {
-  "extends": ["airbnb"]
+  "extends": [
+    "airbnb",
+    "plugin:@tanstack/eslint-plugin-query/recommended" // https://tanstack.com/query/latest/docs/react/eslint/eslint-plugin-query
+  ],
+  "plugins": ["@tanstack/query"]
 }
