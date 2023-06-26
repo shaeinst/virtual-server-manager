@@ -11,7 +11,7 @@ function App() {
 
     return (
         <div className="MODE__LIGHT">
-            {isSignedIn ? (
+            {!isSignedIn ? (
                 // if user is signed in
                 <Home />
             ) : (

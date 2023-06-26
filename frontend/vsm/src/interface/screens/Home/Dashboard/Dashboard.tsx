@@ -1,9 +1,9 @@
-import "./stylesHomepage.scss"
+import "./stylesDashboard.scss"
 
 function Homepage() {
     return (
         <div id="HOMEPAGE">
-            <h3>home page</h3>
+            <h3>dashboard page</h3>
         </div>
     )
 }

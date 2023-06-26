@@ -5,7 +5,8 @@ export { default as RegisterScreen } from "../interface/screens/Authentication/R
 
 // Home
 export { default as Home } from "../interface/screens/Home"
-export { default as HomepageScreen } from "../interface/screens/Home/Homepage/Homepage"
+export { default as DashboardScreen } from "../interface/screens/Home/Dashboard/Dashboard"
+export { default as SettingScreen } from "../interface/screens/Home/Setting/Setting"
 
 // Page not found
 export { default as NotFound404Page } from "../interface/screens/404/404"

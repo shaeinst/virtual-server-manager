@@ -1,8 +1,12 @@
 const constants = {
     SIDEBAR: {
-        HOME: {
+        DASHBOARD: {
             path: "/",
-            label: "Home",
+            label: "Dashboard",
+        },
+        SETTING: {
+            path: "/setting",
+            label: "Setting",
         },
     },
 }

@@ -1,0 +1,13 @@
+@import "../../theme/styles/colors";
+
+#SIDEBAR {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-right: 1px solid $neutral-200;
+    padding: 10px;
+
+    .sidebar__whitespace {
+        height: 100px;
+    }
+}
