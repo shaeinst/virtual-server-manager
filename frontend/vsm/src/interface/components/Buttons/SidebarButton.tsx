@@ -9,6 +9,7 @@ type ButtonType = {
         path: string
         label: string
     }
+    onClick?: () => void
 }
 
 function SidebarButton() {
@@ -16,9 +17,10 @@ function SidebarButton() {
     const [collapse, setCollapse] = useState(false)
     const navigate = useNavigate()
 
-    const Button = ({ icon, active, route }: ButtonType) => {
+    const Button = ({ icon, active, route, onClick }: ButtonType) => {
         //
         const handleClick = () => {
+            if (onClick) onClick()
             if (route.path === "logout") return
             if (route.path === "collapse") {
                 setCollapse((prev) => !prev)

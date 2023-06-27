@@ -1,6 +1,5 @@
-import { useState } from "react"
 import { RiDashboard3Line } from "react-icons/ri"
-import { SidebarButton } from "$exporter/component"
+import { LogoutModal, SidebarButton } from "$exporter/component"
 import SettingsIcon from "@mui/icons-material/Settings"
 import LogoutIcon from "@mui/icons-material/Logout"
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
@@ -21,6 +20,8 @@ function Sidebar() {
         state: { collapse },
     } = SidebarButton()
 
+    const { Logout, setModalOpen } = LogoutModal()
+
     return (
         <div id="SIDEBAR">
             <div className="sidebar__whitespace"></div>
@@ -37,11 +38,14 @@ function Sidebar() {
             <Button
                 icon={<LogoutIcon />}
                 route={{ path: "logout", label: "logout" }}
+                onClick={() => setModalOpen(true)}
             />
             <Button
                 icon={collapse ? <ArrowForwardIosIcon /> : <ArrowBackIosIcon />}
                 route={{ path: "collapse", label: "collapse" }}
             />
+
+            <Logout />
         </div>
     )
 }
