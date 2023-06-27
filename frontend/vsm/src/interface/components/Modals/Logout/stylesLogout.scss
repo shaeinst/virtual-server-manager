@@ -10,4 +10,37 @@
     outline: 0;
     background: $white;
     border-radius: 8px;
+
+    .logout__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        text-decoration: underline;
+    }
+
+    .logout__body {
+        background: $primary-base;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+
+        height: 50%;
+
+        gap: 40px;
+
+        .confirm__action {
+            display: flex;
+            gap: 10px;
+        }
+
+        .confirm__title {
+            font-size: 22px;
+        }
+        .confirm__action {
+        }
+    }
 }
