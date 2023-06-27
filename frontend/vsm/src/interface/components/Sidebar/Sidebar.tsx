@@ -1,13 +1,13 @@
-import { RiDashboard3Line } from "react-icons/ri"
-import { LogoutModal, SidebarButton } from "$exporter/component"
+import { useLocation } from "react-router-dom"
 import SettingsIcon from "@mui/icons-material/Settings"
 import LogoutIcon from "@mui/icons-material/Logout"
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
+import DashboardIcon from "@mui/icons-material/Dashboard"
 
 import "./stylesSidebar.scss"
 import { CONST_ROUTES } from "$exporter"
-import { useLocation } from "react-router-dom"
+import { LogoutModal, SidebarButton } from "$exporter/component"
 
 const { SIDEBAR } = CONST_ROUTES
 
@@ -27,7 +27,7 @@ function Sidebar() {
             <div className="sidebar__whitespace"></div>
             <Button
                 active={pathname === SIDEBAR.DASHBOARD.path}
-                icon={<RiDashboard3Line />}
+                icon={<DashboardIcon />}
                 route={SIDEBAR.DASHBOARD}
             />
             <Button

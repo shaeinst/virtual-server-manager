@@ -17,6 +17,7 @@ function Navbar() {
                     variant="outlined"
                     endIcon={<LoginIcon />}
                     className="button__admin"
+                    style={{ textTransform: "none" }}
                 >
                     Go to Django Admin
                 </Button>
@@ -24,6 +25,7 @@ function Navbar() {
                     variant="contained"
                     endIcon={<RiLoginCircleLine />}
                     className="button__form"
+                    style={{ textTransform: "none" }}
                 >
                     Check Out Forms
                 </Button>

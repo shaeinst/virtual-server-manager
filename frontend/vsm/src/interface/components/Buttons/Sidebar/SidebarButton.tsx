@@ -1,6 +1,7 @@
 import { useState } from "react"
-import "./stylesButton.scss"
 import { useNavigate } from "react-router-dom"
+
+import "./stylesButton.scss"
 
 type ButtonType = {
     icon: React.ReactNode
@@ -34,6 +35,7 @@ function SidebarButton() {
                 id="SIDEBARBUTTON"
                 className={active ? "active__button" : "non__active-button"}
                 onClick={handleClick}
+                style={{ justifyContent: collapse ? "center" : "flex-start" }}
             >
                 <div className="button__icon">{icon}</div>
                 {collapse ? null : <div>{route.label}</div>}

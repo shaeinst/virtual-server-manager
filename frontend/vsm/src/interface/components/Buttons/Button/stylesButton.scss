@@ -1,0 +1,70 @@
+@import "../../../theme/styles/colors";
+
+.button__base {
+    border-radius: 6px;
+    border: 1px solid $neutral-300;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 5px 15px;
+    gap: 5px;
+    font-weight: 500;
+
+    .button-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .button-title {
+    }
+}
+
+.button {
+    @extend .button__base;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+        background: $neutral-100;
+    }
+    &:active {
+        background: $primary-base;
+        color: $white;
+    }
+}
+
+.primary__button {
+    background: $primary-base;
+    color: $white;
+
+    &:hover {
+        background: $primary-base;
+        color: $neutral-300;
+    }
+
+    &:active {
+        background: $white;
+        color: $neutral-900;
+    }
+}
+
+.danger__button {
+    background: $danger-base;
+    color: $white;
+
+    &:hover {
+        background: $danger-base;
+        color: $danger-lighter;
+    }
+
+    &:active {
+        background: $white;
+        color: $danger-base;
+    }
+}
+
+.button__disabled {
+    @extend .button__base;
+}

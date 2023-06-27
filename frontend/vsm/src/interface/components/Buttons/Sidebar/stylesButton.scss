@@ -1,4 +1,4 @@
-@import "../../theme/styles/colors";
+@import "../../../theme/styles/colors";
 
 .active__button {
     color: $white;
@@ -11,10 +11,8 @@
 
 #SIDEBARBUTTON {
     display: flex;
-    // align-items: flex-start;
-    // align-self: stretch;
-    justify-content: center;
-
+    align-items: center;
+    height: 20px;
     user-select: none;
     font-size: 16px;
     font-weight: 500;
@@ -27,5 +25,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    &:hover {
+        background: $neutral-200;
     }
 }
