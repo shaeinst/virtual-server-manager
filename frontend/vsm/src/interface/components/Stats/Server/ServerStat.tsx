@@ -35,6 +35,7 @@ function ServerStat() {
                         count={item.count}
                         style={item.style}
                         icon={item.icon}
+                        key={item.title}
                     />
                 )
             })}

@@ -31,9 +31,9 @@ function Sidebar() {
                 route={SIDEBAR.DASHBOARD}
             />
             <Button
-                active={pathname === SIDEBAR.SETTING.path}
+                active={pathname === SIDEBAR.SERVERS.path}
                 icon={<SettingsIcon />}
-                route={SIDEBAR.SETTING}
+                route={SIDEBAR.SERVERS}
             />
             <Button
                 icon={<LogoutIcon />}

@@ -13,7 +13,7 @@ function RouteHome() {
     return (
         <Routes>
             <Route path={routes.DASHBOARD.path} element={<DashboardScreen />} />
-            <Route path={routes.SETTING.path} element={<SettingScreen />} />
+            <Route path={routes.SERVERS.path} element={<SettingScreen />} />
 
             {/* if no url matchs (404 not found) */}
             <Route path="*" element={<NotFound404Page />} />

@@ -4,9 +4,9 @@ const constants = {
             path: "/",
             label: "Dashboard",
         },
-        SETTING: {
-            path: "/setting",
-            label: "Setting",
+        SERVERS: {
+            path: "/servers",
+            label: "Servers",
         },
     },
 }
