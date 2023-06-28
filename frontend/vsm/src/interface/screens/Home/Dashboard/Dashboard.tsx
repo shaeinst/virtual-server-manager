@@ -1,5 +1,5 @@
 import "./stylesDashboard.scss"
-import { LogDisplay, ServerStat } from "$exporter/component"
+import { LogDisplay, ServerDisplay, ServerStat } from "$exporter/component"
 
 function Dashboard() {
     //
@@ -9,7 +9,7 @@ function Dashboard() {
             <ServerStat />
             <LogDisplay />
             <div className="bottom">
-                <h3>this is bottom</h3>
+                <ServerDisplay />
             </div>
         </div>
     )
