@@ -10,8 +10,8 @@
         flex-direction: column;
 
         .content {
-            // background: blue;
             height: 100%;
+            overflow-y: scroll;
         }
     }
 }

@@ -23,6 +23,13 @@ const fakeLogs = [
 function LogDisplay() {
     //
     const [logs, setLogs] = useState<any[]>([""])
+    const [commandExecuting, setCommandExecuting] = useState(true)
+
+    const handleTerminate = () => {
+        // handle the execution of command on server
+
+        setCommandExecuting(false)
+    }
 
     useEffect(() => {
         setLogs(fakeLogs)
@@ -49,7 +56,9 @@ function LogDisplay() {
                 <Button
                     title="Terminate"
                     icon={<StopCircleIcon />}
-                    type="danger"
+                    type={commandExecuting ? "danger" : null}
+                    disabled={commandExecuting ? false : true}
+                    onClick={handleTerminate}
                 />
             </div>
         </div>

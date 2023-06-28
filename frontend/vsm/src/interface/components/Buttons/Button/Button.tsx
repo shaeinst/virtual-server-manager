@@ -5,7 +5,7 @@ type PropsType = {
     onClick?: () => void
     icon?: React.ReactNode
     disabled?: boolean
-    type?: "primary" | "danger"
+    type?: "primary" | "danger" | null
 }
 
 function Button({ title, onClick, icon, disabled, type }: PropsType) {
