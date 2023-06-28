@@ -1,5 +1,3 @@
-import { AiOutlineClear } from "react-icons/ai"
-
 import { statBoxItems } from "./statBoxItem"
 import "./stylesServerStat.scss"
 
@@ -15,7 +13,7 @@ type StatBoxType = {
 
 const StatBox = ({ title, count, style, icon }: StatBoxType) => {
     return (
-        <div id="STATBOX" style={style}>
+        <div className="STATBOX" style={style}>
             <div className="label">
                 {icon}
                 <div className="title">{title}</div>

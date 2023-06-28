@@ -6,7 +6,9 @@ import { RiLoginCircleLine } from "react-icons/ri"
 import "./stylesNavbar.scss"
 
 function Navbar() {
+    //
     const [user, setUser] = useState("John")
+
     return (
         <div id="NAVBAR">
             <div className="nav__left">

@@ -1,38 +1,12 @@
 @import "../../../theme/styles/colors";
 
 #DASHBOARD {
-    padding: 20px 0 0 20px;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-
-    .top {
-        display: flex;
-        justify-content: space-evenly;
-
-        .serverstat {
-        }
-
-        .log__container {
-            width: 900px;
-
-            .logdisplay {
-                height: 60vh;
-                overflow: auto;
-                border-radius: 8px;
-                margin: 0 10px 0 0;
-                background: $neutral-100;
-            }
-            .actions {
-                margin: 10px 10px 0 0;
-                display: flex;
-                justify-content: flex-end;
-                gap: 10px;
-            }
-        }
-    }
+    padding: 40px 20px 20px 40px;
+    gap: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
 
     .bottom {
-        background: red;
+        grid-column: 1 / -1;
     }
 }

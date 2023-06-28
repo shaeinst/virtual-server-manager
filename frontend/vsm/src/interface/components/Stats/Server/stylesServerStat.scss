@@ -1,19 +1,18 @@
 #SERVERSTAT {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns:  repeat(2, 1fr);
+    grid-auto-rows: 85px;
     gap: 20px;
 }
 
-#STATBOX {
+.STATBOX {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: fit-content;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 8px;
-    min-width: 80px;
+    min-width: 100px;
     user-select: none;
 
     .label {
