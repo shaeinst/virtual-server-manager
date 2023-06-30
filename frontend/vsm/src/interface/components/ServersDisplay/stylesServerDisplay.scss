@@ -1,25 +1,26 @@
 @import "../../theme/styles/colors";
 
 .SERVERDISPLAY {
-    // background: red;
-
-    .actions {
-        background: pink;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .TABLE {
-    // background: yellow;
-
     .cell__status-online {
         color: green;
     }
     .cell__status-offline {
         color: red;
-        // color: $danger-base;
     }
     .header {
         background: $neutral-100;
-        // color: $white;
     }
+}
+
+.ACTIONS {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    // padding: 10px 40px 10px 20px;
 }

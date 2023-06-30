@@ -1,5 +1,10 @@
 import { useState } from "react"
-import { DataGrid, GridColDef, GridRowSelectionModel } from "@mui/x-data-grid"
+import {
+    DataGrid,
+    GridColDef,
+    GridRowSelectionModel,
+    GridToolbar,
+} from "@mui/x-data-grid"
 
 import "./stylesServerDisplay.scss"
 
@@ -46,7 +51,7 @@ function Table() {
         //
 
         return (
-            <div className="TABLE" style={{ height: 400, width: "100%" }}>
+            <div className="TABLE" style={{ height: 500, width: "100%" }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}
@@ -59,14 +64,22 @@ function Table() {
                     checkboxSelection
                     getRowClassName={(params) => {
                         return params.row.status === "online"
-                            ? ""
+                            ? "cell__status-online"
                             : "cell__status-offline"
                     }}
                     rowSelectionModel={selectedServers}
                     onRowSelectionModelChange={(servers) => {
                         setSelectedServers(servers)
                     }}
+                    slots={{ toolbar: GridToolbar }}
+                    slotProps={{
+                        toolbar: {
+                            showQuickFilter: true,
+                            quickFilterProps: { debounceMs: 500 },
+                        },
+                    }}
                 />
+
             </div>
         )
     }

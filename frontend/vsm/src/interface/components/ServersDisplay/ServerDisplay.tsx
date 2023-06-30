@@ -1,14 +1,15 @@
-import Table from "./Table"
 import "./stylesServerDisplay.scss"
+import Actions from "./Action"
+import Table from "./Table"
 
 function ServerDisplay() {
     //
 
-    const { Display } = Table()
+    const { Display, selectedServers } = Table()
 
     return (
         <div className="SERVERDISPLAY">
-            <div className="actions">actions are here</div>
+            <Actions selectedServers={selectedServers} />
             <Display />
         </div>
     )
