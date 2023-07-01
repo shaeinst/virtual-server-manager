@@ -1,57 +1,31 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { AiOutlineClear } from "react-icons/ai"
 import StopCircleIcon from "@mui/icons-material/StopCircle"
 
 import "./stylesLogDisplay.scss"
+import FilterServer from "./FilterServer"
 import { Button } from "$exporter/component"
-
-const fakeLogs = [
-    "log record 1",
-    "log record 2",
-    "log record 3",
-    "log record 4",
-    "log record 4",
-    "log record 4",
-    "log record 4",
-    "log record 4",
-    "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
-    "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
-    "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
-    "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
-]
 
 function LogDisplay() {
     //
-    const [logs, setLogs] = useState<any[]>([""])
+
     const [commandExecuting, setCommandExecuting] = useState(true)
 
     const handleTerminate = () => {
         // handle the execution of command on server
-
         setCommandExecuting(false)
     }
 
-    useEffect(() => {
-        setLogs(fakeLogs)
-    }, [])
+    const { DisplayServerFilter, logs, clearLogs } = FilterServer()
 
     return (
         <div className="LOGDISPLAY">
-            <div className="container">
-                {logs.map((log, index) => {
-                    return (
-                        <p className="log" key={index}>
-                            {log}
-                        </p>
-                    )
-                })}
-            </div>
-
             <div className="actions">
+                <DisplayServerFilter />
                 <Button
                     title="Clear"
                     icon={<AiOutlineClear />}
-                    onClick={() => setLogs([])}
+                    onClick={clearLogs}
                 />
                 <Button
                     title="Terminate"
@@ -60,6 +34,18 @@ function LogDisplay() {
                     disabled={commandExecuting ? false : true}
                     onClick={handleTerminate}
                 />
+            </div>
+
+            <div className="container">
+                {logs.map((log, index) => {
+                    return (
+                        <div className="log" key={index}>
+                            [<span className="server">{log.server}</span>]
+                            &nbsp;
+                            <p>{log.msg}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

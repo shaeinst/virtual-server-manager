@@ -13,15 +13,33 @@
         border-radius: 8px;
 
         .log {
+            display: flex;
             color: --neutral-500;
             font-size: 16px;
+
+            .server {
+                color: rgb(239, 108, 0);
+            }
         }
     }
 
     .actions {
-        margin-top: 10px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: flex-end;
+        align-items: flex-end;
         gap: 10px;
+
+        // server filter
+        > :first-child {
+            margin-right: auto;
+            min-width: 40%;
+        }
+
+        // action buttons
+        > :nth-child(2),
+        > :nth-child(3) {
+            max-height: 30px;
+        }
     }
 }
