@@ -8,9 +8,7 @@ function Dashboard() {
         <div id="DASHBOARD">
             <ServerStat />
             <LogDisplay />
-            <div className="bottom">
-                <ServerDisplay />
-            </div>
+            <ServerDisplay />
         </div>
     )
 }

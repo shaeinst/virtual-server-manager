@@ -6,7 +6,7 @@
     display: grid;
     grid-template-columns: auto auto;
 
-    .bottom {
+    > :last-child {
         grid-column: 1 / -1;
     }
 }

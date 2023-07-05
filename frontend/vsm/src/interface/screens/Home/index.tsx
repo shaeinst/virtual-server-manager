@@ -8,10 +8,7 @@ function Home() {
             <Sidebar />
             <div className="right">
                 <Navbar />
-
-                <div className="content">
-                    <RouteHome />
-                </div>
+                <RouteHome />
             </div>
         </div>
     )

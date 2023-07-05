@@ -16,7 +16,7 @@ const StatBox = ({ title, count, style, icon }: StatBoxType) => {
         <div className="STATBOX" style={style}>
             <div className="label">
                 {icon}
-                <div className="title">{title}</div>
+                {title}
             </div>
             <div className="count">{count}</div>
         </div>
